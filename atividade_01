@@ -1,9 +1,8 @@
-
-    #include "raylib.h"
+#include "raylib.h"
 
 int main()
 {
-    InitWindow(800, 600, "Meu primeiro game");
+    InitWindow(800, 450, "basic window");
 
     while (!WindowShouldClose())
     {
@@ -11,14 +10,14 @@ int main()
 
         ClearBackground(RAYWHITE);
 
-        DrawText("Bem-vindo ao Raylib", 10, 10, 40, BLUE);
-        DrawText("Pressione ESC para sair", 10,100,40, RED);
-
-        EndDrawing();
+        DrawRectangle(100, 100, 100, 100, RED);
+        DrawRectangle(125, 125, 125, 125, GREEN);
+        DrawRectangle(150, 150, 150, 150, YELLOW);
+       
+       EndDrawing();
     }
 
     CloseWindow();
 
     return 0;
-   
 }
