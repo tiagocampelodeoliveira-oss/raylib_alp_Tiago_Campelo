@@ -2,19 +2,25 @@
 
 int main()
 {
+    int posX = 0;  // Onde o quadrado está no eixo horizontal
+
     InitWindow(800, 450, "basic window");
 
     while (!WindowShouldClose())
     {
+        posX++;
+if (posX > 800)
+    {
+    posX = 0;
+    }
+
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
 
-        DrawRectangle(100, 100, 100, 100, RED);
-        DrawRectangle(125, 125, 125, 125, GREEN);
-        DrawRectangle(150, 150, 150, 150, YELLOW);
-       
-       EndDrawing();
+        DrawRectangle(posX, 100, 100, 100, BLUE);
+
+        EndDrawing();
     }
 
     CloseWindow();
