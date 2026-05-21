@@ -2,23 +2,34 @@
 
 int main()
 {
-    Texture2D sprite;   // Vou ter uma imagem chamada sprite
-    Texture2D sprite2; 
+    float posX = -100; 
+    float posY = -100; 
     
+    Texture2D sprite;
+    Texture2D sprite2;
+
     InitWindow(800, 450, "basic window");
 
-    sprite = LoadTexture("inimigo.png");   // Carregue a imagem sprite.png para usar no jogo
+    sprite = LoadTexture("inimigo.png");
     sprite2 = LoadTexture("feliz.png");
-    
+
     while (!WindowShouldClose())
     {
+        posX += GetFrameTime() * 500;
+        posY += GetFrameTime() * 500;
+        
+        if (posX > 800)
+        {
+            posX = -500;
+        }
+        
         BeginDrawing();
 
         ClearBackground(RAYWHITE);
 
-        DrawTexture(sprite, 15, 50, WHITE);
-        DrawTexture(sprite2, 50, 25, WHITE);
-        
+        DrawTexture(sprite, posX, 20, WHITE);
+        DrawTexture(sprite2, posX, 50, WHITE);
+
         EndDrawing();
     }
 
